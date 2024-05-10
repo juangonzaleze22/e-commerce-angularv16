@@ -1,0 +1,16 @@
+.contact {
+  margin: 100px auto;
+  max-width: 1200px;
+  &__title {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+  }
+  &__description {
+    color: var(--color-primary);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    margin: 0;
+  }
+}

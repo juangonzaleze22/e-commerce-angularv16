@@ -1,0 +1,40 @@
+.container{
+
+}
+
+.products{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  margin: 2rem auto;
+  gap: 2rem;
+}
+.search-results {
+  height: 100rem;
+  overflow: scroll;
+}
+
+.gridSections{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+
+.aside{
+  box-shadow: 1px 3px 7px rgba(0, 0, 0, .16);
+  padding: 1rem;
+  height: max-content;
+  margin-top: 65px;
+  h4{
+    margin: 0;
+    font-weight: normal;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  button{
+    width: 100%;
+    text-align: left !important;
+    justify-content: start;
+  }
+}

@@ -1,0 +1,21 @@
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  main {
+    flex: 1;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.ngxImageZoomThumbnail {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+}

@@ -1,0 +1,32 @@
+<mat-card class="card" (click)="detailProduct(product.id)">
+  <!-- <img class="card__image"
+   mat-card-image
+   [src]="product.thumbnail"
+   alt="Photo of a Shiba Inu"
+
+   > -->
+  <app-lazy-image [imageUrl]="product.thumbnail"></app-lazy-image>
+  <span
+    class="card__disscount"
+    *ngIf="product.discountPercentage && showDisscount"
+    >{{ product.discountPercentage }}%</span
+  >
+  <mat-card-content>
+    <h5 class="card__title">{{ product.title }}</h5>
+    <p class="card__description">
+      {{ product.description }}
+    </p>
+    <p class="card__price" *ngIf="product.discountPercentage">
+      {{
+        utils.showPriceWithDiscount(product.price, product.discountPercentage)
+          | currency
+      }}
+      <small class="card__notDiscount">
+        {{ product.price | currency }}
+      </small>
+    </p>
+    <p class="card__price" *ngIf="product.discountPercentage == 0">
+      {{ product.price | currency }}
+    </p>
+  </mat-card-content>
+</mat-card>

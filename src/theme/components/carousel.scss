@@ -1,0 +1,59 @@
+.owl-theme .owl-nav {
+  margin: 0;
+}
+.owl-prev,
+.owl-theme .owl-nav .owl-next {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: #000;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 1;
+  margin: 0;
+  padding: 4px !important;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50% !important;
+  box-shadow: 3px 7px 16px rgba(0, 0, 0, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  transition: .3s ease-in-out;
+  img {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+.owl-theme .owl-nav .owl-prev.disabled,
+.owl-theme .owl-nav .owl-next.disabled{
+  opacity: .7;
+}
+
+.owl-theme:hover {
+  /*  position: relative; */
+  .owl-prev,
+  .owl-next {
+    opacity: 1;
+  }
+}
+
+.owl-theme .owl-nav .owl-prev {
+  left: 0;
+}
+
+.owl-theme .owl-nav .owl-next {
+  right: 0;
+}
+

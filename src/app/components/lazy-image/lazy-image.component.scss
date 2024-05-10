@@ -1,0 +1,31 @@
+.bodyImage{
+  position: relative;
+  .bodySpinner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  &__spinner{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    margin: auto;
+    transform: scale(.4);
+  }
+
+  .lazy-image{
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+

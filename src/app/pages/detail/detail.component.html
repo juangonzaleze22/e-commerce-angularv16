@@ -1,0 +1,78 @@
+<section class="detailsProduct">
+  <div
+    class="container detailsProduct__wrapper"
+    *ngIf="product$ | async as product"
+  >
+    <div class="box">
+      <div class="carouselZoomBox">
+        <lib-ngx-image-zoom
+          class="carouselZoomBox__preview"
+          [thumbImage]="product.images[0]"
+          [fullImage]="product.images[0]"
+          [magnification]="1.75"
+          [enableScrollZoom]="true"
+          [enableLens]="true"
+          [lensWidth]="250"
+          [lensHeight]="250"
+          #previewImage
+        ></lib-ngx-image-zoom>
+        <owl-carousel-o [options]="customOptions">
+          <ng-template
+            carouselSlide
+            *ngFor="let img of product.images; let i = index"
+          >
+            <img
+              [src]="img"
+              [alt]="img"
+              (click)="changeImageOwlCarousel(img, i)"
+              [ngClass]="{ active: activeIndexOwl == i }"
+            />
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+
+    <div class="box">
+      <article class="boxText">
+        <h3 class="boxText__title">{{ product.title }}</h3>
+        <p class="boxText__description">{{ product.description }}</p>
+        <app-rating [ratingValue]="product.rating"></app-rating>
+        <h4 class="boxText__price" *ngIf="product.discountPercentage">
+          {{
+            utils.showPriceWithDiscount(
+              product.price,
+              product.discountPercentage
+            ) | currency
+          }}
+          <small class="boxText__notDiscount">
+            {{ product.price | currency }}
+          </small>
+        </h4>
+        <h4 class="boxText__price" *ngIf="product.discountPercentage == 0">
+          {{ product.price | currency }}
+        </h4>
+        <p>Free delivery</p>
+
+        <div class="boxAdd">
+          <div class="quantity">
+            <button mat-icon-button (click)="decrement()">
+              <mat-icon>remove</mat-icon>
+            </button>
+            <span>{{ quantity }}</span>
+            <button mat-icon-button (click)="increment()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+          <button class="boxAdd__button" mat-raised-button color="primary">
+            Agregar
+          </button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<div>
+  other section <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</div>
+
+<div class="co ntainer"></div>

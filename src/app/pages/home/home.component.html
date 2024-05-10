@@ -1,0 +1,40 @@
+<app-banner></app-banner>
+<div class="container">
+  <div class="boxTitle">
+    <h2>{{ "PRODUCTS" | translate }}</h2>
+    <a mat-button [routerLink]="['/products']">{{ "SEE_MORE" | translate }}</a>
+  </div>
+  <div class="section">
+    <owl-carousel-o [options]="customOptions" *ngIf="products.length > 0">
+      <ng-template carouselSlide *ngFor="let product of products">
+        <app-card class="app-card" [product]="product" />
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+  <div class="boxTitle">
+    <h2>{{ "PRODUCTS_MOST_RATING" | translate }}</h2>
+    <a mat-button [routerLink]="['/products', 'rated']">
+      {{ "SEE_MORE" | translate }}
+    </a>
+  </div>
+  <div class="section">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let product of productsTopRating">
+        <app-card class="app-card" [product]="product" />
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+  <div class="boxTitle">
+    <h2>{{ "BEST_DISCOUNT" | translate }}</h2>
+    <a mat-button [routerLink]="['/products', 'discount']">{{
+      "SEE_MORE" | translate
+    }}</a>
+  </div>
+  <div class="section">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let product of productsMostValue">
+        <app-card class="app-card" [product]="product" [showDisscount]="true" />
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>

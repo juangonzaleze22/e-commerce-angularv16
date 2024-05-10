@@ -1,0 +1,89 @@
+.detailsProduct {
+  padding: 2rem 0;
+  background-color: #f8f8f8;
+  .box {
+    &:last-child {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 3rem;
+
+    img:not(.carouselZoomBox__preview) {
+      max-width: 100%;
+      object-fit: contain;
+      aspect-ratio: 4/2;
+      border: 2px solid transparent;
+      transform: scale();
+      transition: 0.3s ease-in-out all;
+    }
+    img.active {
+      border: 2px solid #1d1d1d;
+    }
+  }
+}
+
+.boxText {
+  &__title {
+    font-size: 4rem;
+    font-weight: bolder;
+    margin-bottom: 0rem;
+    margin-top: 0;
+  }
+
+  &__description {
+    color: var(--color-gray);
+    font-size: 1rem;
+    margin: 0.5rem;
+  }
+
+  &__price {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin: 1rem 0;
+  }
+
+  &__notDiscount {
+    text-decoration: line-through;
+    color: var(--color-gray);
+    font-size: 1rem;
+    font-style: italic;
+    margin-left: 5px;
+    font-weight: normal;
+  }
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  span {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+  }
+  button {
+    min-width: 24px;
+    min-height: 24px;
+    margin: 0 4px;
+    border: 1px solid #ececec;
+  }
+}
+.boxAdd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__button {
+    margin-left: 1rem;
+    border-radius: 25px;
+    height: 45px;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bold;
+  }
+}

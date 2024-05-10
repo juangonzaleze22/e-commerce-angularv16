@@ -1,0 +1,36 @@
+<div class="container products">
+  <aside class="aside">
+    <mat-list role="list">
+      <h4>Filters</h4>
+      <mat-radio-group (change)="onChangeCategory($event)">
+        <mat-radio-button [value]="''" checked> All </mat-radio-button>
+        <mat-radio-button
+          *ngFor="let category of categories$ | async"
+          [value]="category"
+        >
+          {{ category }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </mat-list>
+    <hr />
+  </aside>
+  <section>
+    <h4 *ngIf="params != ''">
+      {{ "ORDER_BY" | translate }}
+      <span *ngIf="params == 'discount'">{{ "DISCOUNT" | translate }}</span>
+      <span *ngIf="params == 'rated'">{{ "MOST_RATING" | translate }}</span>
+    </h4>
+    <h4 *ngIf="params == ''">{{ "ALL_PRODUCTS" | translate }}</h4>
+    <div
+      class="article gridSections"
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="50"
+      [fromRoot]="true"
+      (scrolled)="onScroll()"
+    >
+      <app-card *ngFor="let product of products" [product]="product">
+      </app-card>
+    </div>
+  </section>
+</div>
